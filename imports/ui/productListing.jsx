@@ -20,8 +20,7 @@ export default class ProductListing extends Component {
         // The problem might be here
         return (
             <ListGroupItem header={this.props.product.name} onClick={this.openProduct.bind(this)}>
-                Price: {this.props.product.price}
-                    Experation date: {this.props.product.date}
+                Price: {this.props.product.price}, Experation date: {this.props.product.date}
             </ListGroupItem>
         );
     }

@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36441733-47f8-408b-a5c2-9d51bdd42d52" name="Default" comment="Endret layout og stil med react-bootstrap og visser nå all relevant info om produktene på produkt siden. Har også lagt til en navbar som fungerer. Kan nå legge inn bud, men bud det må være større en det forrige.">
+    <list default="true" id="36441733-47f8-408b-a5c2-9d51bdd42d52" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/main.css" afterPath="$PROJECT_DIR$/client/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/App.jsx" afterPath="$PROJECT_DIR$/imports/ui/App.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/Product.jsx" afterPath="$PROJECT_DIR$/imports/ui/Product.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/header.jsx" afterPath="$PROJECT_DIR$/imports/ui/header.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/productListing.jsx" afterPath="$PROJECT_DIR$/imports/ui/productListing.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/productPage.jsx" afterPath="$PROJECT_DIR$/imports/ui/productPage.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/products.js" afterPath="$PROJECT_DIR$/lib/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/router.js" afterPath="$PROJECT_DIR$/lib/router.js" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +17,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="productListing.jsx" pinned="false" current-in-tab="false">
+            <file leaf-file-name="productListing.jsx" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/imports/ui/productListing.jsx">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="414">
-                    <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+                  <state relative-caret-position="432">
+                    <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
                     <folding>
                       <element signature="e#0#50#0" expanded="true" />
                     </folding>
@@ -47,18 +41,6 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="App.jsx" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/imports/ui/App.jsx">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="90">
-                    <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-                    <folding>
-                      <element signature="e#0#50#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/client/main.css">
                 <provider selected="true" editor-type-id="text-editor">
@@ -69,7 +51,7 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="productPage.jsx" pinned="false" current-in-tab="true">
+            <file leaf-file-name="productPage.jsx" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/imports/ui/productPage.jsx">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="576">
@@ -89,11 +71,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="Product.jsx" pinned="false" current-in-tab="true">
+            <file leaf-file-name="Product.jsx" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/imports/ui/Product.jsx">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="601">
-                    <caret line="83" column="50" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="50" />
+                  <state relative-caret-position="25">
+                    <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
                     <folding>
                       <element signature="e#0#50#0" expanded="true" />
                     </folding>
@@ -106,6 +88,18 @@
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="594">
                     <caret line="33" column="90" lean-forward="false" selection-start-line="33" selection-start-column="90" selection-end-line="33" selection-end-column="90" />
+                    <folding>
+                      <element signature="e#0#50#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="App.jsx" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/imports/ui/App.jsx">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="698">
+                    <caret line="63" column="52" lean-forward="true" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
                     <folding>
                       <element signature="e#0#50#0" expanded="true" />
                     </folding>
@@ -176,6 +170,7 @@
       <find>meteor/sess</find>
       <find>container</find>
       <find>li</find>
+      <find>sort</find>
     </findStrings>
     <replaceStrings>
       <replace>li</replace>
@@ -193,13 +188,13 @@
         <option value="$PROJECT_DIR$/imports/api/products.js" />
         <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/client/main.css" />
-        <option value="$PROJECT_DIR$/imports/ui/productListing.jsx" />
-        <option value="$PROJECT_DIR$/imports/ui/App.jsx" />
         <option value="$PROJECT_DIR$/lib/router.js" />
         <option value="$PROJECT_DIR$/imports/ui/header.jsx" />
-        <option value="$PROJECT_DIR$/imports/ui/Product.jsx" />
         <option value="$PROJECT_DIR$/lib/products.js" />
         <option value="$PROJECT_DIR$/imports/ui/productPage.jsx" />
+        <option value="$PROJECT_DIR$/imports/ui/productListing.jsx" />
+        <option value="$PROJECT_DIR$/imports/ui/Product.jsx" />
+        <option value="$PROJECT_DIR$/imports/ui/App.jsx" />
       </list>
     </option>
   </component>
@@ -527,7 +522,7 @@
       <workItem from="1493905032373" duration="103000" />
       <workItem from="1509709872483" duration="988000" />
       <workItem from="1510054010517" duration="486000" />
-      <workItem from="1510057668888" duration="18039000" />
+      <workItem from="1510057668888" duration="18441000" />
     </task>
     <task id="LOCAL-00001" summary="Lagt til productDB is server, det er en collection hvor alle produktene skal ligge. Samme som en sammling med tables i java server greien">
       <created>1510063224818</created>
@@ -564,11 +559,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510083612327</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Endret layout og stil med react-bootstrap og visser nå all relevant info om produktene på produkt siden. Har også lagt til en navbar som fungerer. Kan nå legge inn bud, men bud det må være større en det forrige budet. Bruker sendes nå tilbake til hovedsiden etter vedkommende lager et nytt produkt.">
+      <created>1510087111250</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1510087111250</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29296000" />
+    <option name="totallyTimeSpent" value="29698000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -612,7 +614,8 @@
     <MESSAGE value="Lagt til productDB is server, det er en collection hvor alle produktene skal ligge. Samme som en sammling med tables i java server greien" />
     <MESSAGE value="Lagt til findOne for productsDB" />
     <MESSAGE value="Findone fungerer og product.jsx kan nå visse all info i et produkt. Header har blitt flyttet inn i en egen klasse.Navigasjon må fortsatt fikses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Findone fungerer og product.jsx kan nå visse all info i et produkt. Header har blitt flyttet inn i en egen klasse.Navigasjon må fortsatt fikses" />
+    <MESSAGE value="Endret layout og stil med react-bootstrap og visser nå all relevant info om produktene på produkt siden. Har også lagt til en navbar som fungerer. Kan nå legge inn bud, men bud det må være større en det forrige budet. Bruker sendes nå tilbake til hovedsiden etter vedkommende lager et nytt produkt." />
+    <option name="LAST_COMMIT_MESSAGE" value="Endret layout og stil med react-bootstrap og visser nå all relevant info om produktene på produkt siden. Har også lagt til en navbar som fungerer. Kan nå legge inn bud, men bud det må være større en det forrige budet. Bruker sendes nå tilbake til hovedsiden etter vedkommende lager et nytt produkt." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1011,40 +1014,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/productListing.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/header.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="33" column="90" lean-forward="false" selection-start-line="33" selection-start-column="90" selection-end-line="33" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Product.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="83" column="50" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="50" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -1065,6 +1038,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/Product.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/productListing.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="63" column="52" lean-forward="true" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
