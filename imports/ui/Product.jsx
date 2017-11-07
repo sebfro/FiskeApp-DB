@@ -5,11 +5,10 @@ import {createContainer} from 'meteor/react-meteor-data';
 
 
 import {Tasks} from '../api/tasks.js';
-import {productsDB} from '../../server/main'
+import {productsDB} from '../../lib/products.js';
 
 
-import Task from './Task.jsx';
-import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import Header from './header.jsx';
 
 // App component - represents the whole app
 class Product extends Component {
@@ -26,21 +25,19 @@ class Product extends Component {
     render() {
         return (
             <div className="container">
+                <Header/>
                 <ul>
                     <li>
-                        Name: {this.props.products.seller}
+                        {this.props.products.name}
                     </li>
                     <li>
-                        Description: {this.props.products.description}
+                        {this.props.products.price}
                     </li>
                     <li>
-                        Price: {this.props.products.price}
+                        {this.props.products.date}
                     </li>
                     <li>
-                        Date: {this.props.products.date}
-                    </li>
-                    <li>
-                        Seller: {this.props.products.seller}
+                        {this.props.products.description}
                     </li>
                 </ul>
             </div>
@@ -48,19 +45,18 @@ class Product extends Component {
     }
 }
 
-App.propTypes = {
-    tasks: PropTypes.array.isRequired,
-    incompleteCount: PropTypes.number.isRequired,
-    currentUser: PropTypes.object,
-};
+
 
 export default createContainer(() => {
-    Meteor.subscribe('productsDBFindOne');
+    let prodId = Session.get('prodId');
+    console.log(prodId);
+    Meteor.subscribe('productsDBFindOne', prodId );
 
     return {
-        products: productsDB.findOne(Session.get('id')),
+        products: productsDB.findOne({_id: prodId}),
         tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
         incompleteCount: Tasks.find({checked: { $ne: true } }).count(),
         currentUser: Meteor.user(),
     };
-}, App);
+}, Product);
+//Endret den over fra App til Product, skal være klassens navn

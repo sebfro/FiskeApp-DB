@@ -5,10 +5,12 @@ import {createContainer} from 'meteor/react-meteor-data';
 
 
 import {Tasks} from '../api/tasks.js';
+import {productsDB} from './../../lib/products.js';
 
 
 import Task from './Task.jsx';
-import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import ProductListing from './productListing.jsx';
+import Header from './header.jsx';
 
 // App component - represents the whole app
 class App extends Component {
@@ -62,36 +64,27 @@ class App extends Component {
         FlowRouter.go('/productPage');
     }
 
+    renderProducts(){
+        let productsList = this.props.products;
+        return productsList.map((prod) => {
+            return (
+                    <ProductListing
+                        key={prod._id}
+                        product={prod}
+                    />
+            )
+        })
+    }
+
     render() {
         return (
             <div className="container">
-                <header>
 
-                    <h1>Todo List ({this.props.incompleteCount})</h1>
-                    <button onClick={this.goToProductPage.bind(this)}>test</button>
+                <Header/>
 
-                    <label className="hide-completed">
-                        <input
-                            type="checkbox"
-                            readOnly
-                            checked={this.state.hideCompleted}
-                            onClick={this.toggleHideCompleted.bind(this)}
-                        />
-                        Hide Completed Tasks
-                    </label>
-
-                    <AccountsUIWrapper/>
-
-                    { this.props.currentUser ?
-                        <form className="new-task" onSubmit={this.handleSubmit.bind(this)}>
-                            <input
-                                type="text"
-                                ref="textInput"
-                                placeholder="Type to add new tasks"
-                            />
-                        </form> : ''
-                    }
-                </header>
+                <ul>
+                    {this.renderProducts()}
+                </ul>
 
                 { this.props.currentUser ?
                     <ul>
@@ -111,8 +104,12 @@ App.propTypes = {
 
 export default createContainer(() => {
     Meteor.subscribe('tasks');
+    Meteor.subscribe('productsDB');
+
+
 
     return {
+        products: productsDB.find({}).fetch(),
         tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
         incompleteCount: Tasks.find({checked: { $ne: true } }).count(),
         currentUser: Meteor.user(),

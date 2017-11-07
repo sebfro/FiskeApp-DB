@@ -8,11 +8,10 @@ import {FormGroup, FormControl, ControlLabel, Button, Form} from 'react-bootstra
 import {Tasks} from '../api/tasks.js';
 
 
-import Task from './Task.jsx';
-import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import Header from './header.jsx';
 
 // App component - represents the whole app
-class App extends Component {
+class productPage extends Component {
     constructor(props) {
         super(props);
 
@@ -31,31 +30,6 @@ class App extends Component {
 
         //Clear form
         ReactDOM.findDOMNode(this.refs.textInput).value = '';
-    }
-
-    toggleHideCompleted() {
-        this.setState({
-            hideCompleted: !this.state.hideCompleted,
-        });
-    }
-
-    renderTasks() {
-        let filteredTasks = this.props.tasks;
-        if (this.state.hideCompleted) {
-            filteredTasks = filteredTasks.filter(task => !task.checked);
-        }
-        return filteredTasks.map((task) => {
-            const currentUserId = this.props.currentUser && this.props.currentUser._id;
-            const showPrivateButton = task.owner === currentUserId;
-
-            return (
-                <Task
-                    key={task._id}
-                    task={task}
-                    showPrivateButton={showPrivateButton}
-                />
-            );
-        });
     }
 
     goToProductPage(e){
@@ -81,9 +55,7 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <header>
-                    <h1>Submit product</h1>
-                </header>
+                <Header/>
 
                 <Form>
                 <ul>
@@ -130,7 +102,7 @@ class App extends Component {
     }
 }
 
-App.propTypes = {
+productPage.propTypes = {
     tasks: PropTypes.array.isRequired,
     incompleteCount: PropTypes.number.isRequired,
     currentUser: PropTypes.object,
@@ -144,4 +116,4 @@ export default createContainer(() => {
         incompleteCount: Tasks.find({checked: { $ne: true } }).count(),
         currentUser: Meteor.user(),
     };
-}, App);
+}, productPage);
