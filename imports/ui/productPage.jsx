@@ -66,18 +66,24 @@ class productPage extends Component {
                         <Form>
                             <ListGroup>
                                 <ListGroupItem>
-                                    <FormControl
-                                        type="text"
-                                        ref="productName"
-                                        placeholder="Enter product name"
-                                    />
+                                    <FormGroup>
+                                        <ControlLabel>Name</ControlLabel>
+                                        <FormControl
+                                            type="text"
+                                            ref="productName"
+                                            placeholder="Enter product name"
+                                        />
+                                    </FormGroup>
                                 </ListGroupItem>
                                 <ListGroupItem>
-                                    <FormControl
-                                        type="number"
-                                        ref="productPrice"
-                                        placeholder="Enter product price"
-                                    />
+                                    <FormGroup>
+                                        <ControlLabel>Price</ControlLabel>
+                                        <FormControl
+                                            type="number"
+                                            ref="productPrice"
+                                            placeholder="Enter product price"
+                                        />
+                                    </FormGroup>
                                 </ListGroupItem>
                                 <ListGroupItem>
                                     <FormGroup>

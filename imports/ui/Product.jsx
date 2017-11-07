@@ -38,19 +38,22 @@ class Product extends Component {
                     <Row>
                         <ListGroup>
                             <ListGroupItem>
-                                {this.props.products.name}
+                                Name: {this.props.products.name}
                             </ListGroupItem>
                             <ListGroupItem>
-                                {this.props.products.price}
+                                Seller: {this.props.products.seller}
                             </ListGroupItem>
                             <ListGroupItem>
-                                {this.props.products.bid}
+                                Price: {this.props.products.price}
                             </ListGroupItem>
                             <ListGroupItem>
-                                {this.props.products.date}
+                                Current bid: {this.props.products.bid}
                             </ListGroupItem>
                             <ListGroupItem>
-                                {this.props.products.description}
+                                Date: {this.props.products.date}
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                Description: {this.props.products.description}
                             </ListGroupItem>
                         </ListGroup>
                     </Row>

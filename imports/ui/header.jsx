@@ -30,8 +30,8 @@ export default class Header extends Component {
         return (
                     <Navbar>
                         <Nav>
-                            <NavItem onClick={this.goToSubmitPage.bind(this)}>Submit product</NavItem>
                             <NavItem onClick={this.goToHomePage.bind(this)}>Home</NavItem>
+                            <NavItem onClick={this.goToSubmitPage.bind(this)}>Submit product</NavItem>
                             <NavItem><AccountsUIWrapper/></NavItem>
 
                         </Nav>
