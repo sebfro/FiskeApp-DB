@@ -12,6 +12,10 @@ if(Meteor.isServer){
     Meteor.publish('productsDB', function publishProducts() {
         return productsDB.find();
     })
+
+    Meteor.publish('productsDBFindOne', (prodId) => {
+        return productsDB.findOne({id: prodId});
+    })
 }
 
 //Metoder for å legge til produkter
