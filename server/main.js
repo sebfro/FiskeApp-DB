@@ -11,7 +11,7 @@ export const productsDB = new Mongo.Collection('productsDB');
 if(Meteor.isServer){
     Meteor.publish('productsDB', function publishProducts() {
         return productsDB.find();
-    })
+    });
 
     Meteor.publish('productsDBFindOne', (prodId) => {
         return productsDB.findOne({id: prodId});
