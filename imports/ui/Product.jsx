@@ -5,6 +5,7 @@ import {createContainer} from 'meteor/react-meteor-data';
 
 
 import {Tasks} from '../api/tasks.js';
+import {productsDB} from '../../server/main'
 
 
 import Task from './Task.jsx';
@@ -27,19 +28,19 @@ class Product extends Component {
             <div className="container">
                 <ul>
                     <li>
-                        Name: {this.props.tasks}
+                        Name: {this.props.products.seller}
                     </li>
                     <li>
-                        Description: {this.props.tasks}
+                        Description: {this.props.products.description}
                     </li>
                     <li>
-                        Price: {this.props.tasks}
+                        Price: {this.props.products.price}
                     </li>
                     <li>
-                        Date: {this.props.tasks}
+                        Date: {this.props.products.date}
                     </li>
                     <li>
-                        Seller: {this.props.tasks}
+                        Seller: {this.props.products.seller}
                     </li>
                 </ul>
             </div>
@@ -54,9 +55,10 @@ App.propTypes = {
 };
 
 export default createContainer(() => {
-    Meteor.subscribe('pro');
+    Meteor.subscribe('productsDBFindOne');
 
     return {
+        products: productsDB.findOne(Session.get('id')),
         tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
         incompleteCount: Tasks.find({checked: { $ne: true } }).count(),
         currentUser: Meteor.user(),
