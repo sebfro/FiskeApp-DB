@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Meteor} from 'meteor/meteor';
+import {ListGroupItem} from 'react-bootstrap';
+
 
 // Task component - represents a single todo item
 export default class ProductListing extends Component {
@@ -17,9 +19,10 @@ export default class ProductListing extends Component {
         // so that we can style them nicely in css
         // The problem might be here
         return (
-            <li onClick={this.openProduct.bind(this)}>
-                {this.props.product.name}
-            </li>
+            <ListGroupItem header={this.props.product.name} onClick={this.openProduct.bind(this)}>
+                Price: {this.props.product.price}
+                    Experation date: {this.props.product.date}
+            </ListGroupItem>
         );
     }
 }

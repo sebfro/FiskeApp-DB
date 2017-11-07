@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
-
+import {PageHeader, Grid, Row, ButtonToolbar, Button, ButtonGroup, ListGroup} from 'react-bootstrap';
 
 import {Tasks} from '../api/tasks.js';
 import {productsDB} from './../../lib/products.js';
@@ -16,81 +16,34 @@ import Header from './header.jsx';
 class App extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            hideCompleted: false,
-        };
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-
-        // Find the text field via the React ref
-        const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-
-        Meteor.call('tasks.insert', text);
-
-        //Clear form
-        ReactDOM.findDOMNode(this.refs.textInput).value = '';
-    }
-
-    toggleHideCompleted() {
-        this.setState({
-            hideCompleted: !this.state.hideCompleted,
-        });
-    }
-
-    renderTasks() {
-        let filteredTasks = this.props.tasks;
-        if (this.state.hideCompleted) {
-            filteredTasks = filteredTasks.filter(task => !task.checked);
-        }
-        return filteredTasks.map((task) => {
-            const currentUserId = this.props.currentUser && this.props.currentUser._id;
-            const showPrivateButton = task.owner === currentUserId;
-
-            return (
-                <Task
-                    key={task._id}
-                    task={task}
-                    showPrivateButton={showPrivateButton}
-                />
-            );
-        });
-    }
-
-    goToProductPage(e){
-        e.preventDefault();
-        FlowRouter.go('/productPage');
-    }
-
-    renderProducts(){
+    renderProducts() {
         let productsList = this.props.products;
         return productsList.map((prod) => {
             return (
-                    <ProductListing
-                        key={prod._id}
-                        product={prod}
-                    />
+                <ProductListing
+                    key={prod._id}
+                    product={prod}
+                />
             )
         })
     }
 
     render() {
         return (
-            <div className="container">
+            <div className="map-container">
 
-                <Header/>
-
-                <ul>
-                    {this.renderProducts()}
-                </ul>
-
-                { this.props.currentUser ?
-                    <ul>
-                        {this.renderTasks()}
-                    </ul> : ''
-                }
+            <Grid>
+                <Row>
+                    <Header/>
+                </Row>
+                <Row>
+                    <ListGroup>
+                        {this.renderProducts()}
+                    </ListGroup>
+                </Row>
+            </Grid>
             </div>
         );
     }
@@ -107,11 +60,10 @@ export default createContainer(() => {
     Meteor.subscribe('productsDB');
 
 
-
     return {
         products: productsDB.find({}).fetch(),
         tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
-        incompleteCount: Tasks.find({checked: { $ne: true } }).count(),
+        incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
         currentUser: Meteor.user(),
     };
 }, App);

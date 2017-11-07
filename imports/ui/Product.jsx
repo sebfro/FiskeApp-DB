@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
-
+import {ListGroupItem, ListGroup, Grid, Row, Form, FormGroup, FormControl, ButtonGroup, Button} from 'react-bootstrap';
 
 import {Tasks} from '../api/tasks.js';
 import {productsDB} from '../../lib/products.js';
@@ -20,42 +20,73 @@ class Product extends Component {
         };
     }
 
+    makeBid(e) {
+        e.preventDefault();
+        const bid = ReactDOM.findDOMNode(this.refs.productBid).value.trim();
+        Meteor.call('productsDB.updateBid', this.props.products._id, bid);
+        console.log(bid);
+    }
 
 
     render() {
         return (
-            <div className="container">
-                <Header/>
-                <ul>
-                    <li>
-                        {this.props.products.name}
-                    </li>
-                    <li>
-                        {this.props.products.price}
-                    </li>
-                    <li>
-                        {this.props.products.date}
-                    </li>
-                    <li>
-                        {this.props.products.description}
-                    </li>
-                </ul>
+            <div className="map-container">
+                <Grid>
+                    <Row>
+                        <Header/>
+                    </Row>
+                    <Row>
+                        <ListGroup>
+                            <ListGroupItem>
+                                {this.props.products.name}
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                {this.props.products.price}
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                {this.props.products.bid}
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                {this.props.products.date}
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                {this.props.products.description}
+                            </ListGroupItem>
+                        </ListGroup>
+                    </Row>
+                    <Row>
+                        <Form>
+
+                            <ListGroup>
+                                <ListGroupItem>
+                                    <FormGroup>
+                                        <FormControl type="number" ref="productBid" placeholder="Enter bid"/>
+                                    </FormGroup>
+                                </ListGroupItem>
+                                <ListGroupItem>
+                                    <Button onClick={this.makeBid.bind(this)}>
+                                        Make bid
+                                    </Button>
+                                </ListGroupItem>
+                            </ListGroup>
+                        </Form>
+                    </Row>
+                </Grid>
             </div>
         );
     }
 }
 
 
-
 export default createContainer(() => {
     let prodId = Session.get('prodId');
     console.log(prodId);
-    Meteor.subscribe('productsDBFindOne', prodId );
+    Meteor.subscribe('productsDBFindOne', prodId);
 
     return {
         products: productsDB.findOne({_id: prodId}),
         tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
-        incompleteCount: Tasks.find({checked: { $ne: true } }).count(),
+        incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
         currentUser: Meteor.user(),
     };
 }, Product);

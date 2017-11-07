@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36441733-47f8-408b-a5c2-9d51bdd42d52" name="Default" comment="Findone fungerer og product.jsx kan nå visse all info i et produkt. Header har blitt flyttet inn i en egen klasse.Navigasjon må fortsatt fikses">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/header.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imports/ui/productListing.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/products.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FiskeApp-DB.iml" afterPath="$PROJECT_DIR$/.idea/FiskeApp-DB.iml" />
+    <list default="true" id="36441733-47f8-408b-a5c2-9d51bdd42d52" name="Default" comment="Endret layout og stil med react-bootstrap og visser nå all relevant info om produktene på produkt siden. Har også lagt til en navbar som fungerer. Kan nå legge inn bud, men bud det må være større en det forrige.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/.finished-upgraders" afterPath="$PROJECT_DIR$/.meteor/.finished-upgraders" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/release" afterPath="$PROJECT_DIR$/.meteor/release" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/main.css" afterPath="$PROJECT_DIR$/client/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/App.jsx" afterPath="$PROJECT_DIR$/imports/ui/App.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/Product.jsx" afterPath="$PROJECT_DIR$/imports/ui/Product.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/header.jsx" afterPath="$PROJECT_DIR$/imports/ui/header.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/productListing.jsx" afterPath="$PROJECT_DIR$/imports/ui/productListing.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/productPage.jsx" afterPath="$PROJECT_DIR$/imports/ui/productPage.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/products.js" afterPath="$PROJECT_DIR$/lib/products.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/router.js" afterPath="$PROJECT_DIR$/lib/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/main.js" afterPath="$PROJECT_DIR$/server/main.js" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +23,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="productListing.jsx" pinned="false" current-in-tab="true">
+            <file leaf-file-name="productListing.jsx" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/imports/ui/productListing.jsx">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="54">
-                    <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+                  <state relative-caret-position="414">
+                    <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
                     <folding>
                       <element signature="e#0#50#0" expanded="true" />
                     </folding>
@@ -45,8 +38,8 @@
             <file leaf-file-name="products.js" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/lib/products.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="306">
-                    <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+                  <state relative-caret-position="777">
+                    <caret line="58" column="65" lean-forward="false" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
                     <folding>
                       <element signature="e#0#39#0" expanded="true" />
                     </folding>
@@ -57,8 +50,30 @@
             <file leaf-file-name="App.jsx" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/imports/ui/App.jsx">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="558">
-                    <caret line="82" column="25" lean-forward="false" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+                  <state relative-caret-position="90">
+                    <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+                    <folding>
+                      <element signature="e#0#50#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/client/main.css">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="432">
+                    <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="productPage.jsx" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/imports/ui/productPage.jsx">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="576">
+                    <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
                     <folding>
                       <element signature="e#0#50#0" expanded="true" />
                     </folding>
@@ -74,11 +89,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="Product.jsx" pinned="false" current-in-tab="false">
+            <file leaf-file-name="Product.jsx" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/imports/ui/Product.jsx">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="486">
-                    <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+                  <state relative-caret-position="601">
+                    <caret line="83" column="50" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="50" />
                     <folding>
                       <element signature="e#0#50#0" expanded="true" />
                     </folding>
@@ -86,21 +101,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="productPage.jsx" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/imports/ui/productPage.jsx">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="180">
-                    <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file leaf-file-name="header.jsx" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/imports/ui/header.jsx">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="324">
-                    <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                  <state relative-caret-position="594">
+                    <caret line="33" column="90" lean-forward="false" selection-start-line="33" selection-start-column="90" selection-end-line="33" selection-end-column="90" />
                     <folding>
                       <element signature="e#0#50#0" expanded="true" />
                     </folding>
@@ -118,8 +123,8 @@
       <file leaf-file-name="router.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+            <state relative-caret-position="216">
+              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#45#97#0" expanded="true" />
@@ -167,9 +172,14 @@
       <find>productlisting</find>
       <find>if(</find>
       <find>server/main</find>
+      <find>row</find>
+      <find>meteor/sess</find>
+      <find>container</find>
+      <find>li</find>
     </findStrings>
     <replaceStrings>
       <replace>li</replace>
+      <replace>ListGroupItem</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -182,12 +192,13 @@
         <option value="$PROJECT_DIR$/.idea/FiskeApp-DB.iml" />
         <option value="$PROJECT_DIR$/imports/api/products.js" />
         <option value="$PROJECT_DIR$/server/main.js" />
+        <option value="$PROJECT_DIR$/client/main.css" />
         <option value="$PROJECT_DIR$/imports/ui/productListing.jsx" />
-        <option value="$PROJECT_DIR$/lib/router.js" />
-        <option value="$PROJECT_DIR$/lib/products.js" />
         <option value="$PROJECT_DIR$/imports/ui/App.jsx" />
+        <option value="$PROJECT_DIR$/lib/router.js" />
         <option value="$PROJECT_DIR$/imports/ui/header.jsx" />
         <option value="$PROJECT_DIR$/imports/ui/Product.jsx" />
+        <option value="$PROJECT_DIR$/lib/products.js" />
         <option value="$PROJECT_DIR$/imports/ui/productPage.jsx" />
       </list>
     </option>
@@ -212,7 +223,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
     <option name="y" value="18" />
-    <option name="width" value="1195" />
+    <option name="width" value="956" />
     <option name="height" value="1035" />
   </component>
   <component name="ProjectView">
@@ -238,6 +249,11 @@
             <path>
               <item name="FiskeApp-DB" type="b2602c69:ProjectViewProjectNode" />
               <item name="FiskeApp-DB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FiskeApp-DB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FiskeApp-DB" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FiskeApp-DB" type="b2602c69:ProjectViewProjectNode" />
@@ -277,7 +293,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="js.meteor.project" value="true" />
     <property name="js.meteor.library.was.enabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FiskeAppMedFlowRouter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fiskefunnAdmin" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -511,7 +527,7 @@
       <workItem from="1493905032373" duration="103000" />
       <workItem from="1509709872483" duration="988000" />
       <workItem from="1510054010517" duration="486000" />
-      <workItem from="1510057668888" duration="14572000" />
+      <workItem from="1510057668888" duration="18039000" />
     </task>
     <task id="LOCAL-00001" summary="Lagt til productDB is server, det er en collection hvor alle produktene skal ligge. Samme som en sammling med tables i java server greien">
       <created>1510063224818</created>
@@ -541,11 +557,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510065362545</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Findone fungerer og product.jsx kan nå visse all info i et produkt. Header har blitt flyttet inn i en egen klasse.Navigasjon må fortsatt fikses">
+      <created>1510083612327</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1510083612327</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25829000" />
+    <option name="totallyTimeSpent" value="29296000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -557,16 +580,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="18" width="1195" height="1035" extended-state="4" />
+    <frame x="0" y="18" width="956" height="1035" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27901024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3504823" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858709" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38539326" sideWeight="0.50343645" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32858709" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858709" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3713034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3713034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16100767" sideWeight="0.49656358" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -619,7 +642,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -697,7 +720,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -743,7 +766,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -810,7 +833,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -943,7 +966,7 @@
         <state relative-caret-position="-152">
           <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -980,30 +1003,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/products.js">
+    <entry file="file://$PROJECT_DIR$/client/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="432">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/header.jsx">
+    <entry file="file://$PROJECT_DIR$/imports/ui/productListing.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="414">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Product.jsx">
+    <entry file="file://$PROJECT_DIR$/imports/ui/header.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        <state relative-caret-position="594">
+          <caret line="33" column="90" lean-forward="false" selection-start-line="33" selection-start-column="90" selection-end-line="33" selection-end-column="90" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -1012,26 +1033,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="82" column="25" lean-forward="false" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+        <state relative-caret-position="90">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/productPage.jsx">
+    <entry file="file://$PROJECT_DIR$/imports/ui/Product.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="601">
+          <caret line="83" column="50" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/productListing.jsx">
+    <entry file="file://$PROJECT_DIR$/lib/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        <state relative-caret-position="777">
+          <caret line="58" column="65" lean-forward="false" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/productPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -1040,8 +1073,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        <state relative-caret-position="216">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#45#97#0" expanded="true" />

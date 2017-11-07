@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
-import {FormGroup, FormControl, ControlLabel, Button, Form} from 'react-bootstrap';
+import {FormGroup, FormControl, ControlLabel, Button, Form, ListGroup, ListGroupItem, Grid, Row} from 'react-bootstrap';
 
 
 import {Tasks} from '../api/tasks.js';
@@ -32,12 +32,12 @@ class productPage extends Component {
         ReactDOM.findDOMNode(this.refs.textInput).value = '';
     }
 
-    goToProductPage(e){
+    goToProductPage(e) {
         e.preventDefault();
         FlowRouter.go('/productPage');
     }
 
-    submitProduct(e){
+    submitProduct(e) {
         e.preventDefault();
         const prodName = ReactDOM.findDOMNode(this.refs.productName).value.trim();
         const prodPrice = ReactDOM.findDOMNode(this.refs.productPrice).value.trim();
@@ -50,53 +50,61 @@ class productPage extends Component {
         console.log(typeof prodDesc);
 
         Meteor.call('productsDB.insert', prodName, prodPrice, prodDate, prodDesc);
+
+        FlowRouter.go('/');
     }
 
     render() {
         return (
             <div className="container">
-                <Header/>
+                <Grid>
+                    <Row>
+                        <Header/>
+                    </Row>
 
-                <Form>
-                <ul>
-                    <li>
-                        <input
-                        type="text"
-                        ref="productName"
-                        placeholder="Enter product name"
-                        />
-                    </li>
-                    <li>
-                        <input
-                            type="number"
-                            ref="productPrice"
-                            placeholder="Enter product price"
-                        />
-                    </li>
-                    <li>
-                        <FormGroup>
-                            <ControlLabel>Choose a date</ControlLabel>
-                            <FormControl
-                                type="date"
-                                ref="productDate"
-                            />
-                        </FormGroup>
-                    </li>
-                    <li>
-                        <FormGroup>
-                            <ControlLabel>Description</ControlLabel>
-                            <FormControl
-                                componentClass="textarea"
-                                placeholder="Enter the description"
-                                ref="productDescription"
-                            />
-                        </FormGroup>
-                    </li>
-                    <li>
-                        <Button onClick={this.submitProduct.bind(this)}>Submit</Button>
-                    </li>
-                </ul>
-                </Form>
+                    <Row>
+                        <Form>
+                            <ListGroup>
+                                <ListGroupItem>
+                                    <FormControl
+                                        type="text"
+                                        ref="productName"
+                                        placeholder="Enter product name"
+                                    />
+                                </ListGroupItem>
+                                <ListGroupItem>
+                                    <FormControl
+                                        type="number"
+                                        ref="productPrice"
+                                        placeholder="Enter product price"
+                                    />
+                                </ListGroupItem>
+                                <ListGroupItem>
+                                    <FormGroup>
+                                        <ControlLabel>Choose a date</ControlLabel>
+                                        <FormControl
+                                            type="date"
+                                            ref="productDate"
+                                        />
+                                    </FormGroup>
+                                </ListGroupItem>
+                                <ListGroupItem>
+                                    <FormGroup>
+                                        <ControlLabel>Description</ControlLabel>
+                                        <FormControl
+                                            componentClass="textarea"
+                                            placeholder="Enter the description"
+                                            ref="productDescription"
+                                        />
+                                    </FormGroup>
+                                </ListGroupItem>
+                                <ListGroupItem>
+                                    <Button onClick={this.submitProduct.bind(this)}>Submit</Button>
+                                </ListGroupItem>
+                            </ListGroup>
+                        </Form>
+                    </Row>
+                </Grid>
             </div>
         );
     }
@@ -113,7 +121,7 @@ export default createContainer(() => {
 
     return {
         tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
-        incompleteCount: Tasks.find({checked: { $ne: true } }).count(),
+        incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
         currentUser: Meteor.user(),
     };
 }, productPage);
