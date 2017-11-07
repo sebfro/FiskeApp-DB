@@ -23,3 +23,6 @@ accounts-password
 facebook-config-ui
 accounts-facebook
 practicalmeteor:mocha
+kadira:flow-router
+zimme:active-route
+kadira:react-layout

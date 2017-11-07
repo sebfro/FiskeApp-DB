@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
+import {FormGroup, FormControl, ControlLabel, Button, Form} from 'react-bootstrap';
 
 
 import {Tasks} from '../api/tasks.js';
@@ -62,42 +63,68 @@ class App extends Component {
         FlowRouter.go('/productPage');
     }
 
+    submitProduct(e){
+        e.preventDefault();
+        const prodName = ReactDOM.findDOMNode(this.refs.productName).value.trim();
+        const prodPrice = ReactDOM.findDOMNode(this.refs.productPrice).value.trim();
+        const prodDate = ReactDOM.findDOMNode(this.refs.productDate).value.trim();
+        const prodDesc = ReactDOM.findDOMNode(this.refs.productDescription).value.trim();
+
+        console.log(typeof prodName);
+        console.log(typeof prodPrice);
+        console.log(typeof prodDate);
+        console.log(typeof prodDesc);
+
+        Meteor.call('productsDB.insert', prodName, prodPrice, prodDate, prodDesc);
+    }
+
     render() {
         return (
             <div className="container">
                 <header>
-
-                    <h1>Todo List ({this.props.incompleteCount})</h1>
-                    <button onClick={this.goToProductPage.bind(this)}>test</button>
-
-                    <label className="hide-completed">
-                        <input
-                            type="checkbox"
-                            readOnly
-                            checked={this.state.hideCompleted}
-                            onClick={this.toggleHideCompleted.bind(this)}
-                        />
-                        Hide Completed Tasks
-                    </label>
-
-                    <AccountsUIWrapper/>
-
-                    { this.props.currentUser ?
-                        <form className="new-task" onSubmit={this.handleSubmit.bind(this)}>
-                            <input
-                                type="text"
-                                ref="textInput"
-                                placeholder="Type to add new tasks"
-                            />
-                        </form> : ''
-                    }
+                    <h1>Submit product</h1>
                 </header>
 
-                { this.props.currentUser ?
-                    <ul>
-                        {this.renderTasks()}
-                    </ul> : ''
-                }
+                <Form>
+                <ul>
+                    <li>
+                        <input
+                        type="text"
+                        ref="productName"
+                        placeholder="Enter product name"
+                        />
+                    </li>
+                    <li>
+                        <input
+                            type="number"
+                            ref="productPrice"
+                            placeholder="Enter product price"
+                        />
+                    </li>
+                    <li>
+                        <FormGroup>
+                            <ControlLabel>Choose a date</ControlLabel>
+                            <FormControl
+                                type="date"
+                                ref="productDate"
+                            />
+                        </FormGroup>
+                    </li>
+                    <li>
+                        <FormGroup>
+                            <ControlLabel>Description</ControlLabel>
+                            <FormControl
+                                componentClass="textarea"
+                                placeholder="Enter the description"
+                                ref="productDescription"
+                            />
+                        </FormGroup>
+                    </li>
+                    <li>
+                        <Button onClick={this.submitProduct.bind(this)}>Submit</Button>
+                    </li>
+                </ul>
+                </Form>
             </div>
         );
     }

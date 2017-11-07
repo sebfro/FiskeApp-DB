@@ -9,6 +9,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="meteor-packages-auto-import-npm" level="project" />
+>>>>>>> f8f4680c4d08067de45ad528a4431c3527fa65ab
     <orderEntry type="library" name="meteor-packages-auto-import-browser" level="project" />
     <orderEntry type="library" name="meteor-packages-auto-import-npm" level="project" />
   </component>
