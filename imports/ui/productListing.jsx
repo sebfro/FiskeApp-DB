@@ -5,7 +5,9 @@ import {ListGroupItem} from 'react-bootstrap';
 
 // Task component - represents a single todo item
 export default class ProductListing extends Component {
-
+    constructor(props){
+        super(props);
+    }
     openProduct(e){
         e.preventDefault();
 
@@ -13,6 +15,8 @@ export default class ProductListing extends Component {
         console.log("Session has been set to" + this.props.product._id);
         FlowRouter.go('/productpage');
     }
+
+
 
     render() {
         // Give tasks a different className when they are checked off,

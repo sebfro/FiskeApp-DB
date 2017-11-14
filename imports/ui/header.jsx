@@ -7,6 +7,7 @@ import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
+
 // App component - represents the whole app
 export default class Header extends Component {
     constructor(props) {
@@ -26,14 +27,22 @@ export default class Header extends Component {
         FlowRouter.go('/');
     }
 
+    goToMyListings(e){
+        e.preventDefault();
+        FlowRouter.go('/myListings');
+    }
+
+
+
+
     render() {
         return (
                     <Navbar>
                         <Nav>
                             <NavItem onClick={this.goToHomePage.bind(this)}>Home</NavItem>
                             <NavItem onClick={this.goToSubmitPage.bind(this)}>Submit product</NavItem>
+                            <NavItem onClick={this.goToMyListings.bind(this)}>My products</NavItem>
                             <NavItem><AccountsUIWrapper/></NavItem>
-
                         </Nav>
                     </Navbar>
         );

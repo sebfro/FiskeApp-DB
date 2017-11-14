@@ -6,7 +6,7 @@ import {ListGroupItem, ListGroup, Grid, Row, Form, FormGroup, FormControl, Butto
 
 import {Tasks} from '../api/tasks.js';
 import {productsDB} from '../../lib/products.js';
-
+import {checkDate} from "../../lib/helpMethods"
 
 import Header from './header.jsx';
 
@@ -23,12 +23,30 @@ class Product extends Component {
     makeBid(e) {
         e.preventDefault();
         const bid = ReactDOM.findDOMNode(this.refs.productBid).value.trim();
-        Meteor.call('productsDB.updateBid', this.props.products._id, bid);
+        Meteor.call('productsDB.updateBid', this.props.products._id, bid, this.props.currentUser);
         console.log(bid);
+    }
+
+    acceptBid(e){
+        e.preventDefault();
+        Meteor.call('productsDB.updateIsAvailable', this.props.products._id);
+        console.log("Bid was accepted");
+    }
+
+    removeProduct(e){
+        e.preventDefault();
+        Meteor.call('productsDB.remove', this.props.products._id);
+        FlowRouter.go('/myListings');
     }
 
 
     render() {
+        let year = this.props.products.date.substring(0,4);
+        let month = this.props.products.date.substring(5,7);
+        let day = this.props.products.date.substring(8,10);
+        console.log(year + "-" + month + "-" + day);
+        console.log(this.props.products.buyerId);
+        console.log(this.props.currentUser);
         return (
             <div className="map-container">
                 <Grid>
@@ -44,9 +62,6 @@ class Product extends Component {
                                 Seller: {this.props.products.seller}
                             </ListGroupItem>
                             <ListGroupItem>
-                                Price: {this.props.products.price}
-                            </ListGroupItem>
-                            <ListGroupItem>
                                 Current bid: {this.props.products.bid}
                             </ListGroupItem>
                             <ListGroupItem>
@@ -58,22 +73,45 @@ class Product extends Component {
                         </ListGroup>
                     </Row>
                     <Row>
-                        <Form>
-
+                        {this.props.currentUser !== this.props.products.sellerId ?
+                        this.props.currentUser ?
+                            <Form>
+                                <ListGroup>
+                                    <ListGroupItem>
+                                        <FormGroup>
+                                            <FormControl type="number" ref="productBid" placeholder="Enter bid"/>
+                                        </FormGroup>
+                                    </ListGroupItem>
+                                    <ListGroupItem>
+                                        <Button onClick={this.makeBid.bind(this)}>
+                                            Make bid
+                                        </Button>
+                                    </ListGroupItem>
+                                </ListGroup>
+                            </Form> : null
+                            : null}
+                    </Row>
+                    { this.props.products.isAvailable || checkDate(this.props.products.date)?
+                        this.props.currentUser === this.props.products.sellerId ?
+                    this.props.products.buyerId ?
+                        <Row>
                             <ListGroup>
                                 <ListGroupItem>
-                                    <FormGroup>
-                                        <FormControl type="number" ref="productBid" placeholder="Enter bid"/>
-                                    </FormGroup>
-                                </ListGroupItem>
-                                <ListGroupItem>
-                                    <Button onClick={this.makeBid.bind(this)}>
-                                        Make bid
-                                    </Button>
+                                    <Button onClick={this.acceptBid.bind(this)}>Accept bid</Button>
                                 </ListGroupItem>
                             </ListGroup>
-                        </Form>
-                    </Row>
+                        </Row> : null
+                        : null
+                    :
+                        <Row>
+                            <ListGroup>
+                                <ListGroupItem>
+                                    This product has been sold, would you like to remove it?
+                                    <Button onClick={this.removeProduct.bind(this)}>Remove product</Button>
+                                </ListGroupItem>
+                            </ListGroup>
+                        </Row>
+                    }
                 </Grid>
             </div>
         );
@@ -90,7 +128,7 @@ export default createContainer(() => {
         products: productsDB.findOne({_id: prodId}),
         tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
         incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
-        currentUser: Meteor.user(),
+        currentUser: Meteor.userId(),
     };
 }, Product);
 //Endret den over fra App til Product, skal være klassens navn
