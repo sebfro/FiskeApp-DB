@@ -1,14 +1,12 @@
 import React, {Component, PropTypes} from 'react';
-import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
-import {PageHeader, Grid, Row, ListGroupItem, ListGroup} from 'react-bootstrap';
+import {Grid, Row, ListGroupItem, ListGroup} from 'react-bootstrap';
 
 import {Tasks} from '../api/tasks.js';
 import {productsDB} from './../../lib/products.js';
 
 
-import Task from './Task.jsx';
 import ProductListing from './productListing.jsx';
 import Header from './header.jsx';
 
@@ -20,7 +18,6 @@ class MyListings extends Component {
 
     renderProducts() {
         if(this.props.products[0] !== undefined){
-            let date =  new Date();
             return this.props.products.map((prod) => {
                 if(this.props.currentUser._id === prod.sellerId){
                     return (
