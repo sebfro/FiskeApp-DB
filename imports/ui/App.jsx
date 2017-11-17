@@ -1,14 +1,11 @@
 import React, {Component, PropTypes} from 'react';
-import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
-import {Grid, Row, ListGroupItem, ListGroup} from 'react-bootstrap';
+import {Grid, Row, ListGroupItem, ListGroup, Button} from 'react-bootstrap';
 
-import {Tasks} from '../api/tasks.js';
 import {productsDB} from './../../lib/products.js';
+import {Loading_feedback} from "./commonComponents"
 
-
-import Task from './Task.jsx';
 import ProductListing from './productListing.jsx';
 import Header from './header.jsx';
 
@@ -51,7 +48,7 @@ class App extends Component {
 
 
         return (
-            <div className="map-container">
+            <div className="container">
 
             <Grid>
                 <Row>
@@ -59,7 +56,10 @@ class App extends Component {
                 </Row>
                 <Row>
                     <ListGroup>
-                        {this.renderProducts()}
+                        {this.props.products ?
+                            this.renderProducts()
+                            : <Loading_feedback/>
+                        }
                     </ListGroup>
                 </Row>
             </Grid>
@@ -68,21 +68,13 @@ class App extends Component {
     }
 }
 
-App.propTypes = {
-    tasks: PropTypes.array.isRequired,
-    incompleteCount: PropTypes.number.isRequired,
-    currentUser: PropTypes.object,
-};
 
 export default createContainer(() => {
-    Meteor.subscribe('tasks');
     Meteor.subscribe('productsDB');
 
 
     return {
         products: productsDB.find({}, {sort: {date: 1}}).fetch(),
-        tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
-        incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
         currentUser: Meteor.user(),
     };
 }, App);

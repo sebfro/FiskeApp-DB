@@ -9,6 +9,11 @@
     margin: 0 auto;
 }
 
+.Jumbotron {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .loader {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
@@ -47,3 +52,4 @@
     float: right;
     position: relative;
 }
+

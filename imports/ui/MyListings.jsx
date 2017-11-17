@@ -3,7 +3,6 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import {Grid, Row, ListGroupItem, ListGroup} from 'react-bootstrap';
 
-import {Tasks} from '../api/tasks.js';
 import {productsDB} from './../../lib/products.js';
 
 
@@ -39,7 +38,7 @@ class MyListings extends Component {
 
     render() {
         return (
-            <div className="map-container">
+            <div className="container">
 
                 <Grid>
                     <Row>
@@ -56,21 +55,13 @@ class MyListings extends Component {
     }
 }
 
-MyListings.propTypes = {
-    tasks: PropTypes.array.isRequired,
-    incompleteCount: PropTypes.number.isRequired,
-    currentUser: PropTypes.object,
-};
 
 export default createContainer(() => {
-    Meteor.subscribe('tasks');
     Meteor.subscribe('productsDB.myListings');
 
 
     return {
         products: productsDB.find({sellerId: Meteor.userId()}, {sort: {date: 1}}).fetch(),
-        tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
-        incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
         currentUser: Meteor.user(),
     };
 }, MyListings);

@@ -3,7 +3,6 @@ import {Meteor} from 'meteor/meteor';
 import {ListGroupItem} from 'react-bootstrap';
 
 
-// Task component - represents a single todo item
 export default class ProductListing extends Component {
     constructor(props){
         super(props);
@@ -19,19 +18,10 @@ export default class ProductListing extends Component {
 
 
     render() {
-        // Give tasks a different className when they are checked off,
-        // so that we can style them nicely in css
-        // The problem might be here
         return (
             <ListGroupItem header={this.props.product.name} onClick={this.openProduct.bind(this)}>
-                Price: {this.props.product.price}, Experation date: {this.props.product.date}
+                {this.props.product.bid ? "Current bid: " + this.props.product.bid + ", " : null }Experation date: {this.props.product.date}
             </ListGroupItem>
         );
     }
 }
-
-ProductListing.propTypes = {
-    // This component gets the task to display through a React prop.
-    // We can use propTypes to indicate it is required
-    product: PropTypes.object.isRequired,
-};
