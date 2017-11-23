@@ -5,6 +5,7 @@ import {Grid, Row, ListGroupItem, ListGroup, Button} from 'react-bootstrap';
 
 import {productsDB} from './../../lib/products.js';
 import {Loading_feedback} from "./commonComponents"
+import {checkDate} from "../../lib/helpMethods"
 
 import ProductListing from './productListing.jsx';
 import Header from './header.jsx';
@@ -17,11 +18,8 @@ class App extends Component {
 
     renderProducts() {
         if(this.props.products[0] !== undefined){
-            let date =  new Date();
             return this.props.products.map((prod) => {
-                if(prod.date.substring(0,4) >= date.getFullYear().toString() &&
-                    prod.date.substring(5,7) >= (date.getMonth()+1).toString() &&
-                    prod.date.substring(8,10) >= date.getDate().toString()){
+                if(!checkDate(prod.date)){
                     if(prod.isAvailable){
                         return (
                             <ProductListing
@@ -42,11 +40,6 @@ class App extends Component {
     }
 
     render() {
-        let date =  new Date();
-        let temp = date.getFullYear().toString() + "-" + (date.getMonth()+1).toString() + "-" + date.getDate().toString();
-        console.log(temp);
-
-
         return (
             <div className="container">
 

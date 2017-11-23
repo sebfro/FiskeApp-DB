@@ -38,14 +38,20 @@ export default class Header extends Component {
     render() {
         return (
                     <div>
-                        <Navbar>
+                        <Navbar fixedTop={true}>
+                            <Navbar.Header>
+                                <Navbar.Toggle/>
+                            </Navbar.Header>
+                            <Navbar.Collapse>
                             <Nav>
                                 <NavItem onClick={this.goToHomePage.bind(this)}>Home</NavItem>
                                 <NavItem onClick={this.goToSubmitPage.bind(this)}>Submit product</NavItem>
                                 <NavItem onClick={this.goToMyListings.bind(this)}>My products</NavItem>
                                 <NavItem><AccountsUIWrapper/></NavItem>
                             </Nav>
+                        </Navbar.Collapse>
                         </Navbar>
+                        <br/><br/><br/><br/>
                         <Jumbotron className="Jumbotron">
                             <h1>Auction house</h1>
                         </Jumbotron>

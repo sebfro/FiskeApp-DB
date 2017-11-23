@@ -16,7 +16,8 @@ class productPage extends Component {
         this.state = {
             validName : null,
             validDate : null,
-            validDescription : null
+            validDescription : null,
+            image : null
         }
     }
 
@@ -30,7 +31,7 @@ class productPage extends Component {
             if(prodName.match(/[a-zæøå]/i) && !checkDate(prodDate) && prodDesc.match(/[a-zæøå]/i)) {
 
                 console.log(prodDate);
-                Meteor.call('productsDB.insert', prodName, prodDate, prodDesc);
+                Meteor.call('productsDB.insert', prodName, prodDate, prodDesc, this.state.image);
 
                 FlowRouter.go('/');
             } else {
@@ -44,6 +45,28 @@ class productPage extends Component {
             alert("You have to login to submit a product");
         }
     }
+
+    getPicture(e){
+        e.preventDefault();
+        if(!this.state.image){
+            let cameraOptions = {
+                quality: 100,
+                correctOrientation: true,
+            };
+            MeteorCamera.getPicture(cameraOptions, (err, data) => {
+                if(!err){
+                    this.setState({
+                        image : data
+                    })
+                } else {
+                    console.log(error.message);
+                    console.log(error.reason);
+                }
+            })
+        }
+    }
+
+
 
     render() {
         return (
@@ -86,7 +109,17 @@ class productPage extends Component {
                                     </FormGroup>
                                 </ListGroupItem>
                                 <ListGroupItem>
-                                    <Button bsStyle="primary" onClick={this.submitProduct.bind(this)}>Submit</Button>
+                                    {this.state.image ? <img src={this.state.image}/>:null}
+                                </ListGroupItem>
+                                <ListGroupItem>
+                                    <Button bsStyle="primary" onClick={this.getPicture.bind(this)}>
+                                        Take picture
+                                    </Button>
+                                </ListGroupItem>
+                                <ListGroupItem>
+                                    <Button bsStyle="primary" onClick={this.submitProduct.bind(this)}>
+                                        Submit
+                                    </Button>
                                 </ListGroupItem>
                             </ListGroup>
                         </Form>

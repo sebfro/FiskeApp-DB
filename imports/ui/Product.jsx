@@ -59,6 +59,11 @@ class Product extends Component {
                         </Row>
                         <Row>
                             <ListGroup>
+                                    {this.props.products.img ?
+                                        <ListGroupItem>
+                                            <img src={this.props.products.img}/>
+                                        </ListGroupItem>
+                                        : null}
                                 <ListGroupItem>
                                     Name: {this.props.products.name}
                                 </ListGroupItem>
@@ -133,7 +138,6 @@ class Product extends Component {
 
 export default createContainer(() => {
     let prodId = Session.get('prodId');
-    console.log(prodId);
     Meteor.subscribe('productsDBFindOne', prodId);
 
     return {

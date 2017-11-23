@@ -29,7 +29,7 @@ class MyListings extends Component {
             })
         } else {
             return (
-                <ListGroupItem>
+                <ListGroupItem header="Empty">
                     Couldn't find any listings
                 </ListGroupItem>
             )

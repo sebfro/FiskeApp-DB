@@ -303,6 +303,8 @@
         <item url="file://$USER_HOME$/.meteor/packages/html-tools/1.0.11/web.browser/charref.js" />
         <item url="file://$USER_HOME$/.meteor/packages/html-tools/1.0.11/web.browser/parse.js" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_jetsetter/4.0.0/web.browser/client/row_header/JetSetter_header.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/mdg_camera/1.4.1/web.browser/photo.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/mdg_camera/1.4.1/web.browser/photo-browser.js" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_jetsetter/4.0.0/web.browser/client/_component/component.js" />
         <item url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.11/web.browser/html.js" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_jetsetter/4.0.0/web.browser/client/row_editor/JetSetter_editor.js" />
@@ -759,6 +761,8 @@
       <root url="file://$USER_HOME$/.meteor/packages/html-tools/1.0.11/web.browser/charref.js" />
       <root url="file://$USER_HOME$/.meteor/packages/html-tools/1.0.11/web.browser/parse.js" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_jetsetter/4.0.0/web.browser/client/row_header/JetSetter_header.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/mdg_camera/1.4.1/web.browser/photo.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/mdg_camera/1.4.1/web.browser/photo-browser.js" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_jetsetter/4.0.0/web.browser/client/_component/component.js" />
       <root url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.11/web.browser/html.js" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_jetsetter/4.0.0/web.browser/client/row_editor/JetSetter_editor.js" />
